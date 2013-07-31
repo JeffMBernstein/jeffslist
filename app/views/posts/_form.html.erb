@@ -1,0 +1,14 @@
+<%= simple_form_for(@post) do |f| %>
+
+  <%= f.input :title, label: 'What do you want to call your post?' %>
+  <%= f.file_field :avatar, check_box: :remove_avatar, label: :remove_avatar %>
+  <%= f.input :price %>
+  <%= f.input :content %>
+  <p>Where do you put your shit locally?</p>
+  <%= collection_select(:post, :city_id, City.all, :id, :name) %>
+  <p>In which landmass does your locally-stored shit reside?</p>
+  <%= collection_select(:post, :country_id, Country.all, :id, :name) %>
+  <%= f.input :email, placeholder: 'me@me.com' %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+
+<% end %>

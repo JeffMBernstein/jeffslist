@@ -1,0 +1,11 @@
+<h1>All The Cities!</h1>
+
+<% @city.each do |city| %>
+
+<div><%= city.name %></div>
+
+<% end %>
+<br>
+
+<%= link_to 'New City', new_city_path(@city) %></br>
+<%= link_to 'All Posts', posts_path %>

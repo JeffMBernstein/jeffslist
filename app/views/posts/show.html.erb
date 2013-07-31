@@ -1,0 +1,10 @@
+<h1><%= @post.title %></h1>
+<p><%= image_tag(@post.avatar_url) if @post.avatar? %></p>
+<p><%= @post.content %></p>
+<p><%= @post.price %></p>
+<p><%= @post.city %></p>
+<p><%= @post.email %></p>
+
+<%= link_to "All Posts", posts_path %> |
+<%= link_to "Edit", edit_post_path(@post) %> |
+<%= button_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" } %>
